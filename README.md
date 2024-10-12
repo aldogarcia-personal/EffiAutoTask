@@ -2,7 +2,7 @@
 
 Este proyecto tiene como finalidad la eficiencia de las persona simplificando el trabajo eliminando la monotonia a travez de una interfaz que elimina todas las actividades en las que tengas que hacer muchos clicks de forma repetitiva y que estas sean tardadas
 
-##características
+## características
 
 Currently, two official plugins are available:
 
