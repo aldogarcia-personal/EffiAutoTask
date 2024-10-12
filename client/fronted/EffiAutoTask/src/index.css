@@ -565,9 +565,3 @@ video {
 .flex {
   display: flex;
 }
-
-.NavElement {
-  padding: 1rem;
-  text-decoration: none;
-  color: #f5f5dc;
-}
