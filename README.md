@@ -1,6 +1,8 @@
-# React + TypeScript + Vite
+# EffiAutoTask
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto tiene como finalidad la eficiencia de las persona simplificando el trabajo eliminando la monotonia a travez de una interfaz que elimina todas las actividades en las que tengas que hacer muchos clicks de forma repetitiva y que estas sean tardadas
+
+##características
 
 Currently, two official plugins are available:
 
