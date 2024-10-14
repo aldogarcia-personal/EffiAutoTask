@@ -1,3 +1,4 @@
+import SelectLanguage from "./language.tsx";
 function Nav() {
   return (
     <nav className="bg-0056B3 flex justify-between items-center p-4 shadow-md ">
@@ -36,6 +37,7 @@ function Nav() {
             <img src="../assets/users/aldo.jpeg" alt="usuario" />
           </div>
         </li>
+        <SelectLanguage></SelectLanguage>
       </ul>
     </nav>
   );

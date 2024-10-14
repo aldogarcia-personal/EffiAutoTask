@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SelectLanguage from "./language.tsx";
 
 const LandingPage = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -13,6 +14,8 @@ const LandingPage = () => {
       <header className="bg-0056B3 text-white p-6">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-3xl font-bold">EffiAutoTask</h1>
+          <SelectLanguage></SelectLanguage>
+
           <button
             className="bg-white text-0056B3 px-4 py-2 rounded hover:bg-gray-300"
             onClick={handleLoginClick}
