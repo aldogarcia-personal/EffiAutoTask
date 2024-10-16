@@ -10,6 +10,8 @@ createRoot(document.getElementById("root")!).render(
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LandingPage />} />
+        <Route path="/register" element={<LandingPage />} />
         <Route path="/home" element={<Nav />} />
         <Route path="/about" element={<Nav />} />
         <Route path="/tasks" element={<Nav />} />
