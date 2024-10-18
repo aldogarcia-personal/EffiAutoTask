@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(core());
 
 // Middleware para permitir el uso de JSON
-monogoose
+mongoose
   .connect("mongodb://localhost:27017/EffiAutoTask", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -21,10 +21,11 @@ monogoose
     console.log(err);
   });
 app.get("/", (req, res) => {
+  req.send("Servidor corriendo");
   res.send("Servidor corriendo");
 });
-app.listen(5172, () => {
-  console.log("Server corriendo en puerto 5172");
+app.listen(5173, () => {
+  console.log("Server corriendo en puerto 5173");
 });
 
 export default app;
