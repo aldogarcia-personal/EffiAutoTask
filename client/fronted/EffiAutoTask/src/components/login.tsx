@@ -7,12 +7,23 @@ const Login = () => {
   const [identifier, setIdentifier] = useState(""); // Cambiado a identifier
   const navigate = useNavigate();
 
+  const handleCloseModal = () => {
+    setShowLogin(false);
+    navigate("/"); // Redirige a la página principal
+  };
+
   return (
     <div className="">
       <h2>Inicia sesión en tu cuenta</h2>
       {showLogin && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg relative">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-2 right-2 p-2 bg-0056B3 px-4 py-2 rounded-full text-f5f5dc hover:bg-00449B"
+            >
+              <Regresar />
+            </button>
             <h2 className="text-2xl mb-4">Iniciar Sesión</h2>
             <form>
               <input

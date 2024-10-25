@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Importa el hook useNavigate para la navegación
 import { Regresar } from "./icons.tsx";
 
-function Register() {
+const Register: React.FC = () => {
   const navigate = useNavigate();
-  const [showRegister, setShowRegister] = useState(false); // Define el estado showRegister para mostrar el modal de registro
+  const [showRegister, setShowRegister] = useState(true); // Define el estado showRegister para mostrar el modal de registro
 
   const handleCloseModal = () => {
     setShowRegister(false);
@@ -15,7 +15,7 @@ function Register() {
     // Simulación de registro exitoso
     setTimeout(() => {
       setShowRegister(false); // Cambia el estado a false para cerrar el modal
-      navigate("/login"); // Redirigir al formulario de inicio de sesión
+      navigate("/account/login"); // Redirigir al formulario de inicio de sesión
     }, 1000);
   };
 
@@ -27,9 +27,7 @@ function Register() {
             onClick={handleCloseModal}
             className="absolute top-2 right-2 p-2 bg-0056B3 px-4 py-2 rounded-full text-f5f5dc hover:bg-00449B"
           >
-            <a href="/">
-              <Regresar />
-            </a>
+            <Regresar />
           </button>
           <h2 className="text-2xl mb-4">Regístrate</h2>
           <form onSubmit={handleRegisterSubmit}>
@@ -56,6 +54,6 @@ function Register() {
       </div>
     )
   );
-}
+};
 
 export default Register;

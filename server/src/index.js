@@ -1,8 +1,7 @@
-// server/index.js
-import express, { request, response } from "express";
+import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { Mong_URI, PORT } from "./config";
+import { MONGODB_URI, PORT } from "./config";
 
 const app = express();
 
@@ -16,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 mongoose
-  .connect(Mong_URI, {
+  .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -29,7 +28,3 @@ mongoose
   .catch((err) => {
     console.log("error connecting to MongoDB:", err);
   });
-
-// Middleware para permitir el uso de JSON
-app.listen(27017);
-console.log(`Servidor corriendo en http://localhost:${PORT}`);

@@ -1,16 +1,15 @@
-// server/server.js
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import User from "../models/users.js";
+import { MONGODB_URI, PORT } from "./config";
 
 const app = express();
 app.use(express.json());
-app.use(core());
+app.use(cors());
 
-// Middleware para permitir el uso de JSON
 mongoose
-  .connect("mongodb://localhost:27017/EffiAutoTask", {
+  .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -20,12 +19,13 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
 app.get("/", (req, res) => {
-  req.send("Servidor corriendo");
   res.send("Servidor corriendo");
 });
-app.listen(5173, () => {
-  console.log("Server corriendo en puerto 5173");
+
+app.listen(PORT, () => {
+  console.log(`Server corriendo en puerto ${PORT}`);
 });
 
 export default app;

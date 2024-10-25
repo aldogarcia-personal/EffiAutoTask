@@ -27,3 +27,5 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ error: "Error al conectar" });
   }
 });
+
+export default router;

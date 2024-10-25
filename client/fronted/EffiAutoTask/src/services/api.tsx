@@ -15,3 +15,23 @@ export const login = async (identified: string, password: string) => {
 
   return response.json();
 };
+
+export const register = async (
+  name: string,
+  email: string,
+  password: string
+) => {
+  const response = await fetch(`${apiUrl}/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, email, password }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Error al registrar usuario");
+  }
+
+  return response.json();
+};
