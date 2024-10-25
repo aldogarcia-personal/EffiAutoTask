@@ -27,7 +27,9 @@ function Register() {
             onClick={handleCloseModal}
             className="absolute top-2 right-2 p-2 bg-0056B3 px-4 py-2 rounded-full text-f5f5dc hover:bg-00449B"
           >
-            <Regresar />
+            <a href="/">
+              <Regresar />
+            </a>
           </button>
           <h2 className="text-2xl mb-4">Regístrate</h2>
           <form onSubmit={handleRegisterSubmit}>

@@ -1,6 +1,7 @@
 import SelectLanguage from "./language.tsx"; // Importa un componente para seleccionar el idioma
 import { useState } from "react"; // Importa el hook useState para gestionar el estado
 import { useNavigate } from "react-router-dom"; // Importa el hook useNavigate para la navegación
+import DropdownUser from "./user.tsx";
 
 function Nav() {
   const [logOut, setLogOut] = useState(false); // Define el estado logOut para mostrar el modal de cierre de sesión
@@ -47,14 +48,8 @@ function Nav() {
             Tasks
           </a>
         </li>
-        <li>
-          <div>
-            <img
-              src="../assets/users/aldo.jpeg"
-              alt="usuario"
-              className="h-10 w-10 rounded-full"
-            />
-          </div>
+        <li className="flex ">
+          <DropdownUser userName="aldo" />
         </li>
         <li>
           <button
@@ -64,7 +59,9 @@ function Nav() {
             Cerrar Sesión
           </button>
         </li>
-        <SelectLanguage />
+        <li>
+          <SelectLanguage />
+        </li>
       </ul>
 
       {/* Modal para confirmar el cierre de sesión */}
