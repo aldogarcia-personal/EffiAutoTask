@@ -565,3 +565,7 @@ video {
 .flex {
   display: flex;
 }
+
+.custom-width-70 {
+  width: 70%;
+}

@@ -13,19 +13,27 @@ const LandingPage = () => {
           <h1 className="text-3xl font-bold">EffiAutoTask</h1>
 
           <div>
-            <SelectLanguage />
-            <a
-              className="bg-white text-0056B3 px-4 py-2 rounded hover:bg-gray-300 mr-4"
-              href="/account/login"
-            >
-              Iniciar Sesión
-            </a>
-            <a
-              className="bg-white text-0056B3 px-4 py-2 rounded hover:bg-gray-300"
-              href="/account/register"
-            >
-              Regístrate
-            </a>
+            <ul className="flex flex-center items-center ">
+              <li className="m-4">
+                <SelectLanguage />
+              </li>
+              <li>
+                <a
+                  className="bg-white text-0056B3 px-4 py-2 rounded hover:bg-gray-300 mr-4"
+                  href="/account/login"
+                >
+                  Iniciar Sesión
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bg-white text-0056B3 px-4 py-2 rounded hover:bg-gray-300"
+                  href="/account/register"
+                >
+                  Regístrate
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </header>

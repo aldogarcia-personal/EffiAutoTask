@@ -21,33 +21,45 @@ const Register: React.FC = () => {
 
   return (
     showRegister && (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="bg-white p-6 rounded-lg relative">
-          <button
-            onClick={handleCloseModal}
-            className="absolute top-2 right-2 p-2 bg-0056B3 px-4 py-2 rounded-full text-f5f5dc hover:bg-00449B"
-          >
-            <Regresar />
-          </button>
+      <div className="fixed inset-0 bg-black bg-opacity-10 flex items-center  ">
+        <div className="bg-white p-6 rounded-lg relative ml-auto h-screen w-8/12 ">
           <h2 className="text-2xl mb-4">Regístrate</h2>
-          <form onSubmit={handleRegisterSubmit}>
+          <span>
+            ¿Ya tienes una cuenta?{" "}
+            <a href="/account/login" className="text-0056B3">
+              Inicia sesión
+            </a>
+          </span>
+          <form
+            onSubmit={handleRegisterSubmit}
+            className="flex flex-col justify-between "
+          >
             <input
               type="text"
-              placeholder="Nombre"
-              className="border mb-4 p-2 w-full"
+              placeholder="Username"
+              className="border mb-4 p-2 w-1/2 h-full"
             />
             <input
               type="email"
               placeholder="Email"
-              className="border mb-4 p-2 w-full"
+              className="border mb-4 p-2 w-1/2"
             />
             <input
               type="password"
               placeholder="Contraseña"
-              className="border mb-4 p-2 w-full"
+              className="border mb-4 p-2 w-1/2"
             />
-            <button type="submit" className="bg-0056B3 text-f5f5dc px-4 py-2">
+            <button
+              type="submit"
+              className="bg-0056B3 text-f5f5dc px-4 py-2 w-2/12"
+            >
               Registrarse
+            </button>
+            <button
+              onClick={handleCloseModal}
+              className="absolute right-8 p-2 bg-0056B3 px-4 py-2 rounded-full text-f5f5dc hover:bg-00449B"
+            >
+              <Regresar />
             </button>
           </form>
         </div>

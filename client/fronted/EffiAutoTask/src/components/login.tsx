@@ -16,7 +16,7 @@ const Login = () => {
     <div className="">
       <h2>Inicia sesión en tu cuenta</h2>
       {showLogin && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black bg-opacity-10 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg relative">
             <button
               onClick={handleCloseModal}
@@ -38,13 +38,6 @@ const Login = () => {
               <button type="submit" className="bg-0056B3 text-f5f5dc px-4 py-2">
                 Iniciar Sesión
               </button>
-
-              <a
-                href="/"
-                className="bottom-2 right-2 p-2 bg-0056B3 px-4 py-2 rounded-full text-f5f5dc hover:bg-00449B"
-              >
-                <Regresar />
-              </a>
             </form>
           </div>
         </div>

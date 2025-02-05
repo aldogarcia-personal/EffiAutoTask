@@ -5,6 +5,7 @@ import DropdownUser from "./user.tsx";
 
 function Nav() {
   const [logOut, setLogOut] = useState(false); // Define el estado logOut para mostrar el modal de cierre de sesión
+  const [darkMode, setDarkMode] = useState(false); // Define el estado userName para mostrar el nombre de usuario
   const navigate = useNavigate(); // Inicializa el hook useNavigate
 
   const handleLogOutClick = () => {
@@ -15,9 +16,12 @@ function Nav() {
   const handleOpenLogOutModal = () => {
     setLogOut(true); // Abre el modal de cerrar sesión
   };
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode); // Cambia el estado del modo oscuro
+  };
 
   return (
-    <nav className="bg-0056B3 flex justify-between items-center p-4 shadow-md ">
+    <nav className="bg-0056B3 flex justify-between items-center p-4 shadow-md">
       <div className="flex items-center space-x-4">
         <a href="/home" className="text-f5f5dc text-xl font-bold">
           EffiAutoTask
@@ -48,7 +52,7 @@ function Nav() {
             Tasks
           </a>
         </li>
-        <li className="flex ">
+        <li className="flex">
           <DropdownUser userName="aldo" />
         </li>
         <li>
