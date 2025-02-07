@@ -1,23 +1,38 @@
-import SelectLanguage from "./language.tsx"; // Importa un componente para seleccionar el idioma
-import { useState } from "react"; // Importa el hook useState para gestionar el estado
-import { useNavigate } from "react-router-dom"; // Importa el hook useNavigate para la navegación
-import DropdownUser from "./user.tsx";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import SelectLanguage from "./language";
+import DropdownUser from "./user";
+import { use } from "i18next";
 
 function Nav() {
-  const [logOut, setLogOut] = useState(false); // Define el estado logOut para mostrar el modal de cierre de sesión
-  const [darkMode, setDarkMode] = useState(false); // Define el estado userName para mostrar el nombre de usuario
-  const navigate = useNavigate(); // Inicializa el hook useNavigate
+  const [logOut, setLogOut] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+  useEffect(() => {
+    // Aplica la clase dark al body según el estado darkMode
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    // Guarda la preferencia en localStorage
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
 
+  const navigate = useNavigate();
   const handleLogOutClick = () => {
-    setLogOut(false); // Cambia el estado a false para cerrar el modal
-    navigate("/"); // Redirige a la página principal
+    setLogOut(false);
+    navigate("/");
   };
 
   const handleOpenLogOutModal = () => {
-    setLogOut(true); // Abre el modal de cerrar sesión
+    setLogOut(true);
   };
+
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode); // Cambia el estado del modo oscuro
+    setDarkMode(!darkMode);
   };
 
   return (
@@ -52,21 +67,23 @@ function Nav() {
             Tasks
           </a>
         </li>
-        <li className="flex">
-          <DropdownUser userName="aldo" />
-        </li>
-        <li>
-          <button
-            onClick={handleOpenLogOutModal}
-            className="text-f5f5dc hover:text-red-500"
-          >
-            Cerrar Sesión
-          </button>
-        </li>
-        <li>
-          <SelectLanguage />
-        </li>
       </ul>
+      <div className="flex items-center space-x-4">
+        <button
+          onClick={toggleDarkMode}
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          {darkMode ? "Modo Claro" : "Modo Oscuro"}
+        </button>
+        <SelectLanguage />
+        <DropdownUser userName="aldo" />
+        <button
+          onClick={handleOpenLogOutModal}
+          className="text-f5f5dc hover:text-red-500"
+        >
+          Cerrar Sesión
+        </button>
+      </div>
 
       {/* Modal para confirmar el cierre de sesión */}
       {logOut && (
@@ -80,7 +97,7 @@ function Nav() {
               Confirmar Cierre de Sesión
             </button>
             <button
-              onClick={() => setLogOut(false)} // Cierra el modal sin cerrar sesión
+              onClick={() => setLogOut(false)}
               className="mt-4 text-gray-500"
             >
               Cancelar

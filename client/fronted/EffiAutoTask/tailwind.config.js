@@ -13,3 +13,13 @@ export default {
   },
   plugins: [],
 };
+module.exports = {
+  darkMode: "class", // o 'media' si prefieres el modo oscuro basado en las preferencias del sistema
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
