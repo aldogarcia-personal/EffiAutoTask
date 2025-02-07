@@ -1,4 +1,5 @@
 import SelectLanguage from "./language.tsx";
+import DarkModeToggle from "./DarkModeToggle.tsx";
 import Landing from "../assets/images/landing.webp";
 
 const LandingPage = () => {
@@ -14,6 +15,9 @@ const LandingPage = () => {
 
           <div>
             <ul className="flex flex-center items-center ">
+              <li className="">
+                <DarkModeToggle />
+              </li>
               <li className="m-4">
                 <SelectLanguage />
               </li>

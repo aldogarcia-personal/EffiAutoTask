@@ -6,6 +6,7 @@ import Register from "./components/Register.tsx";
 import Home from "./components/Home.tsx";
 import About from "./components/About.tsx";
 import Task from "./components/Task.tsx";
+import Settings from "./components/Settings.tsx";
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/tasks" element={<Task />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </div>
   );
