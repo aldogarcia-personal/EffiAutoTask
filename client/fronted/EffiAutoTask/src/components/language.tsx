@@ -1,13 +1,12 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"
 
 function SelectLanguage() {
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation()
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem("language", lng);
-  };
+    i18n.changeLanguage(lng)
+    localStorage.setItem("language", lng)
+  }
 
   return (
     <select
@@ -21,7 +20,7 @@ function SelectLanguage() {
       <option value="한국인">한국인</option>
       <option value="Deutsch">Deutsch</option>
     </select>
-  );
+  )
 }
 
-export default SelectLanguage;
+export default SelectLanguage

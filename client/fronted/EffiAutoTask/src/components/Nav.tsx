@@ -1,6 +1,5 @@
-import SelectLanguage from "./language";
-import DropdownUser from "./DropdownUser";
-import DarkModeToggle from "./DarkModeToggle";
+import SelectLanguage from "./language"
+import DropdownUser from "./DropdownUser"
 
 function Nav() {
   return (
@@ -44,7 +43,7 @@ function Nav() {
         <DropdownUser userName="aldo" />
       </div>
     </nav>
-  );
+  )
 }
 
-export default Nav;
+export default Nav

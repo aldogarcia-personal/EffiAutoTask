@@ -1,35 +1,34 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import DarkModeToggle from "./DarkModeToggle";
-import { useTranslation } from "react-i18next";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import DarkModeToggle from "./DarkModeToggle"
 
 function DropdownUser({ userName }: { userName: string }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [logOut, setLogOut] = useState(false);
-  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false)
+  const [logOut, setLogOut] = useState(false)
+  const navigate = useNavigate()
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   const handleLogOutClick = () => {
-    setIsOpen(false);
-    setLogOut(true);
-  };
+    setIsOpen(false)
+    setLogOut(true)
+  }
 
   const confirmLogOut = () => {
-    setLogOut(false);
-    navigate("/");
-  };
+    setLogOut(false)
+    navigate("/")
+  }
 
   const cancelLogOut = () => {
-    setLogOut(false);
-  };
+    setLogOut(false)
+  }
 
   const goToSettings = () => {
-    setIsOpen(false);
-    navigate("/settings");
-  };
+    setIsOpen(false)
+    navigate("/settings")
+  }
 
   return (
     <div className="relative">
@@ -82,7 +81,7 @@ function DropdownUser({ userName }: { userName: string }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default DropdownUser;
+export default DropdownUser
