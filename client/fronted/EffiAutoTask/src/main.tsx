@@ -1,11 +1,11 @@
-import { createRoot } from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./index.css";
-import { StrictMode } from "react";
-import Nav from "./components/Nav";
-import LandingPage from "./components/Inicio";
-import Login from "./components/login";
-import Register from "./components/Register.tsx";
+import { createRoot } from "react-dom/client"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import "./index.css"
+import { StrictMode } from "react"
+import Nav from "./components/Nav"
+import LandingPage from "./components/Inicio"
+import Login from "./components/login"
+import Register from "./components/Register.tsx"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -20,4 +20,4 @@ createRoot(document.getElementById("root")!).render(
       </Routes>
     </Router>
   </StrictMode>
-);
+)
