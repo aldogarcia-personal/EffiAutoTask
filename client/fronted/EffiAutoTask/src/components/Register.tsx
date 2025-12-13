@@ -1,23 +1,39 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importa el hook useNavigate para la navegación
-import { Regresar } from "./icons.tsx";
+import React, { useState, useId } from "react"
+import { useNavigate } from "react-router-dom" // Importa el hook useNavigate para la navegación
+import { Regresar } from "./icons.tsx"
 
 const Register: React.FC = () => {
-  const navigate = useNavigate();
-  const [showRegister, setShowRegister] = useState(true); // Define el estado showRegister para mostrar el modal de registro
+  const navigate = useNavigate()
+  const passwordId = useId()
+  const confirmId = useId()
+  const errorId = useId()
+  const [error, setError] = useState(false)
+  const [showRegister, setShowRegister] = useState(true) // Define el estado showRegister para mostrar el modal de registro
 
   const handleCloseModal = () => {
-    setShowRegister(false);
-    navigate("/"); // Redirige a la página principal
-  };
+    setShowRegister(false)
+    navigate("/") // Redirige a la página principal
+  }
   const handleRegisterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
+    const form = e.currentTarget
+    const pwdEl = form.querySelector(`#${passwordId}`) as HTMLInputElement | null
+    const confirmEl = form.querySelector(`#${confirmId}`) as HTMLInputElement | null
+    const pwd = pwdEl?.value ?? ""
+    const confirm = confirmEl?.value ?? ""
+
+    if (pwd !== confirm) {
+      setError(true)
+      return
+    }
+
+    setError(false)
     // Simulación de registro exitoso
     setTimeout(() => {
-      setShowRegister(false); // Cambia el estado a false para cerrar el modal
-      navigate("/account/login"); // Redirigir al formulario de inicio de sesión
-    }, 1000);
-  };
+      setShowRegister(false) // Cambia el estado a false para cerrar el modal
+      navigate("/account/login") // Redirigir al formulario de inicio de sesión
+    }, 1000)
+  }
 
   return (
     showRegister && (
@@ -45,9 +61,18 @@ const Register: React.FC = () => {
               className="border mb-4 p-2 w-1/2"
             />
             <input
+              id={passwordId}
               type="password"
               placeholder="Contraseña"
               className="border mb-4 p-2 w-1/2"
+              aria-describedby={error ? errorId : undefined}
+            />
+            <input
+              id={confirmId}
+              type="password"
+              placeholder="confirma contraseña"
+              className="border mb-4 p-2 w-1/2"
+              aria-describedby={error ? errorId : undefined}
             />
             <button
               type="submit"
@@ -61,11 +86,20 @@ const Register: React.FC = () => {
             >
               <Regresar />
             </button>
+            {error && (
+              <p
+                id={errorId}
+                role="alert"
+                className="text-red-500 text-xs font-bold mt-2 mb-4"
+              >
+                las contraseñas no coinciden
+              </p>
+            )}
           </form>
         </div>
       </div>
     )
-  );
-};
+  )
+}
 
-export default Register;
+export default Register
