@@ -1,16 +1,27 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importa el hook useNavigate para la navegación
-import { Regresar } from "./icons.tsx";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom" // Importa el hook useNavigate para la navegación
+import { Regresar } from "./icons.tsx"
 
 const Login = () => {
-  const [showLogin, setShowLogin] = useState(true);
-  const [identifier, setIdentifier] = useState(""); // Cambiado a identifier
-  const navigate = useNavigate();
+  const [showLogin, setShowLogin] = useState(true)
+  const [identifier, setIdentifier] = useState("") // Cambiado a identifier
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (!identifier || !password) return
+
+    //TODO: Verificcr que el usuaro y contraseña no esten vacios en Backend
+    setShowLogin(false)
+    navigate("/home")
+  }
 
   const handleCloseModal = () => {
-    setShowLogin(false);
-    navigate("/"); // Redirige a la página principal
-  };
+    setShowLogin(false)
+    navigate("/") // Redirige a la página principal
+  }
 
   return (
     <div className="">
@@ -25,7 +36,7 @@ const Login = () => {
               <Regresar />
             </button>
             <h2 className="text-2xl mb-4">Iniciar Sesión</h2>
-            <form>
+            <form onSubmit={handleLogin}>
               <input
                 type="text"
                 placeholder="Usuario o Email"
@@ -34,7 +45,13 @@ const Login = () => {
                 className="border mb-4 p-2 w-full"
                 required
               />
-              <input type="password" placeholder="Contraseña" required />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Contraseña"
+                required
+              />
               <button type="submit" className="bg-0056B3 text-f5f5dc px-4 py-2">
                 Iniciar Sesión
               </button>
@@ -43,7 +60,7 @@ const Login = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
