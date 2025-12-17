@@ -5,19 +5,25 @@ const PlanCard = () => {
   const navigate = useNavigate()
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold">Plan</h1>
-      <p className="text-xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod,
-        nisl eget ultricies aliquam, nisi nisl aliquet nisi, in vehicula nisl
-        nunc nec erat. Sed euismod, nisl eget ultricies aliquam, nisi nisl
-        aliquet nisi, in vehicula nisl nunc nec erat. Sed euismod, nisl eget
-        ultricies aliquam, nisi nisl aliquet nisi, in vehicula nisl nunc nec
-        erat. Sed euismod, nisl eget ultricies aliquam, nisi nisl aliquet nisi,
-        in vehicula nisl nunc nec erat. Sed euismod, nisl eget ultricies
-        aliquam, nisi nisl aliquet nisi, in vehicula nisl nunc nec erat. Sed
-        euismod, nisl eget ultricies aliquam, nisi nisl aliquet nisi, in
-        vehicula nisl nunc nec erat.
-      </p>
+      <h1>planes </h1>
+
+      <ul>
+        <li>
+          <section>
+            <h2>Early access for limited time</h2>
+            <span> Free for limited time</span>
+            <button
+              onClick={() => navigate("/account/register")}
+              type="submit"
+              name=""
+              id=""
+              className="bg-0056B3 text-f5f5dc px-4 py-2 rounded-full"
+            >
+              resgistrate
+            </button>
+          </section>
+        </li>
+      </ul>
     </div>
   )
 }

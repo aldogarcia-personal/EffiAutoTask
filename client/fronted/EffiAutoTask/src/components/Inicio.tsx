@@ -1,6 +1,7 @@
-import SelectLanguage from "./language.tsx";
-import DarkModeToggle from "./DarkModeToggle.tsx";
-import Landing from "../assets/images/landing.webp";
+import SelectLanguage from "./language.tsx"
+import DarkModeToggle from "./DarkModeToggle.tsx"
+import Landing from "../assets/images/landing.webp"
+import FeatureSection from "./featureSection.tsx"
 
 const LandingPage = () => {
   // Define el estado showLogin para mostrar el modal de inicio de sesión
@@ -66,9 +67,12 @@ const LandingPage = () => {
             <div className="feature">Característica 3</div>
           </div>
         </section>
+        <section>
+          <FeatureSection />
+        </section>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage
