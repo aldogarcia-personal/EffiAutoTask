@@ -1,3 +1,4 @@
+// TODO: solucionar el problema de selección de idioma japones (se selecciona español al presionar la opcion de japones en el selector)
 import { useTranslation } from "react-i18next"
 
 function SelectLanguage() {
