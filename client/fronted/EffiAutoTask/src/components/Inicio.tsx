@@ -2,10 +2,12 @@ import SelectLanguage from "./language.tsx"
 import DarkModeToggle from "./DarkModeToggle.tsx"
 import Landing from "../assets/images/landing.webp"
 import FeatureSection from "./featureSection.tsx"
+import { useTranslation } from "react-i18next"
 
 const LandingPage = () => {
   // Define el estado showLogin para mostrar el modal de inicio de sesión
   // Define el estado showLogin para mostrar el modal de inicio de sesión
+  const { t } = useTranslation()
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -27,7 +29,7 @@ const LandingPage = () => {
                   className="bg-white text-0056B3 px-4 py-2 rounded hover:bg-gray-300 mr-4"
                   href="/account/login"
                 >
-                  Iniciar Sesión
+                  {t("auth.login")}
                 </a>
               </li>
               <li>
@@ -35,7 +37,7 @@ const LandingPage = () => {
                   className="bg-white text-0056B3 px-4 py-2 rounded hover:bg-gray-300"
                   href="/account/register"
                 >
-                  Regístrate
+                  {t("auth.register")}
                 </a>
               </li>
             </ul>

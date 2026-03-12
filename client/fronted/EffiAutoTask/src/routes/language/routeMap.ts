@@ -4,9 +4,10 @@
 // src/config/routeMap.ts
 
 export const routeMap = {
-  HOME: "/",
+  LANDING: "/",
   LOGIN: "/login",
   REGISTER: "/register",
+  PLANCARD: "/plancard",
   DASHBOARD: "/dashboard",
   SETTINGS: "/settings",
 } as const

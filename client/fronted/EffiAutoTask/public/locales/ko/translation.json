@@ -1,4 +1,38 @@
 {
+  "auth": {
+    "login": "로그인",
+    "register": "가입",
+    "logout": "로그아웃",
+    "username": "사용자명 또는 이메일",
+    "password": "비밀번호",
+    "forgotPassword": "비밀번호를 잊으셨나요?"
+  },
+  "nav": {
+    "home": "홈",
+    "about": "정보",
+    "tasks": "작업",
+    "settings": "설정"
+  },
+  "landing": {
+    "title": "EffiAutoTask",
+    "welcome": "우리 플랫폼에 오신 것을 환영합니다",
+    "description": "우리의 솔루션으로 목표 달성을 돕는 방법을 알아보세요."
+  },
+  "plans": {
+    "free": "무료",
+    "earlyAccess": "조기 액세스",
+    "studentPro": "학생 Pro",
+    "pro": "Pro",
+    "business": "비즈니스",
+    "perMonth": "월별",
+    "verifyUniversity": "대학 확인"
+  },
+  "features": {
+    "feature1": "기능 1",
+    "feature2": "기능 2",
+    "feature3": "기능 3",
+    "feature4": "기능 4"
+  },
   "app.pwa.offline": "오프라인입니다. 응용 프로그램을 새로 고침하세요.",
   "app.pwa.serviceworker.updated": "새 버전의 응용 프로그램이 사용 가능합니다.",
   "app.pwa.serviceworker.updated.ok": "확인",

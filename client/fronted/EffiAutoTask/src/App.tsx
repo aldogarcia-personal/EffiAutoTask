@@ -1,3 +1,4 @@
+//TODO: agregar rutas para cada sección de navegación en el nuevo componente de sidebar, y enrutar a cada una de ellas
 import React from "react"
 import { Routes, Route } from "react-router-dom"
 import LandingPage from "./components/Inicio.tsx"
@@ -7,7 +8,7 @@ import Home from "./components/Home.tsx"
 import About from "./components/About.tsx"
 import Task from "./components/Task.tsx"
 import Settings from "./components/Settings.tsx"
-import PlanSection from "./components/planSection.tsx"
+import PlanSection from "./components/PlanSection.tsx"
 
 const App: React.FC = () => {
   return (

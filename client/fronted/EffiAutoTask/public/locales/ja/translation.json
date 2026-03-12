@@ -1,0 +1,36 @@
+{
+  "auth": {
+    "login": "ログイン",
+    "register": "登録",
+    "logout": "ログアウト",
+    "username": "ユーザー名またはメール",
+    "password": "パスワード",
+    "forgotPassword": "パスワードをお忘れですか?"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "について",
+    "tasks": "タスク",
+    "settings": "設定"
+  },
+  "landing": {
+    "title": "EffiAutoTask",
+    "welcome": "プラットフォームへようこそ",
+    "description": "当社のソリューションで目標を達成する方法を発見してください。"
+  },
+  "plans": {
+    "free": "無料",
+    "earlyAccess": "早期アクセス",
+    "studentPro": "学生 Pro",
+    "pro": "Pro",
+    "business": "ビジネス",
+    "perMonth": "月額",
+    "verifyUniversity": "大学を確認する"
+  },
+  "features": {
+    "feature1": "機能 1",
+    "feature2": "機能 2",
+    "feature3": "機能 3",
+    "feature4": "機能 4"
+  }
+}

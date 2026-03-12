@@ -1,4 +1,38 @@
 {
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "username": "Benutzername oder E-Mail",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "tasks": "Aufgaben",
+    "settings": "Einstellungen"
+  },
+  "landing": {
+    "title": "EffiAutoTask",
+    "welcome": "Willkommen auf unserer Plattform",
+    "description": "Entdecken Sie, wie wir Ihnen helfen können, Ihre Ziele mit unserer Lösung zu erreichen."
+  },
+  "plans": {
+    "free": "Kostenlos",
+    "earlyAccess": "Frühzugriff",
+    "studentPro": "Student Pro",
+    "pro": "Pro",
+    "business": "Geschäft",
+    "perMonth": "pro Monat",
+    "verifyUniversity": "Überprüfen Sie Ihre Universität"
+  },
+  "features": {
+    "feature1": "Funktion 1",
+    "feature2": "Funktion 2",
+    "feature3": "Funktion 3",
+    "feature4": "Funktion 4"
+  },
   "hello": "Hallo",
   "welcome": "Willkommen",
   "goodbye": "Auf Wiedersehen",

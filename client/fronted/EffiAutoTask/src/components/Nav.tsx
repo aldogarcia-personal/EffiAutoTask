@@ -1,5 +1,11 @@
 import SelectLanguage from "./language"
 import DropdownUser from "./DropdownUser"
+// TODO: hacer cambios pertinentes para que el nav sea un sidebar
+// TODO: agregar seeciones de navegación nuevas: dashboard, automations, notes, Insights; Task mantenr
+// TODO: agregar iconos a cada sección de navegación
+// TODO: agregar links a secciones de navegación
+// TODO: agregar botón de log out
+// TODO: Crear componentes de la sección de navegación: Dashboard, Automations, Notes, Insights y Task
 
 function Nav() {
   return (
