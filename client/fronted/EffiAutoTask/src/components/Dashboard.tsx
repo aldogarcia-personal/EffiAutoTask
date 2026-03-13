@@ -1,15 +1,15 @@
 import React from "react"
 import Nav from "./SideBar.tsx"
 
-const Task: React.FC = () => {
+const Dashboard: React.FC = () => {
   return (
     <>
       <Nav />
       <div>
-        <h1>Task</h1>
+        <h1></h1>
       </div>
     </>
   )
 }
 
-export default Task
+export default Dashboard

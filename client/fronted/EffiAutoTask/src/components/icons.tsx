@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 export function Cerrar() {
   return (
     <svg
@@ -14,7 +16,7 @@ export function Cerrar() {
         d="M6 18 18 6M6 6l12 12"
       />
     </svg>
-  );
+  )
 }
 
 export function Regresar() {
@@ -33,7 +35,7 @@ export function Regresar() {
         d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
       />
     </svg>
-  );
+  )
 }
 
 export function Desplegar() {
@@ -52,5 +54,9 @@ export function Desplegar() {
         d="m19.5 8.25-7.5 7.5-7.5-7.5"
       />
     </svg>
-  );
+  )
+}
+
+export function language() {
+  return <FontAwesomeIcon icon={faGlobe} />
 }
