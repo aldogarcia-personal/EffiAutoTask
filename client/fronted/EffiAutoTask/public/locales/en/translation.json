@@ -8,6 +8,7 @@
     "forgotPassword": "Forgot your password?"
   },
   "nav": {
+    "search": "Search",
     "dashboard": "Dashboard",
     "tasks": "Tasks",
     "automations": "Automations",

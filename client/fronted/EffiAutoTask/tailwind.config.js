@@ -13,8 +13,16 @@ export default {
         "nav-light": "#e2e8f0", // Color claro para el fondo del nav
         "nav-dark": "#2d3748", // Color oscuro para el fondo del nav
       },
+      width: {
+        112: "28rem",
+        128: "32rem",
+        144: "36rem",
+        160: "40rem",
+        176: "44rem",
+        192: "48rem",
+      },
     },
   },
   darkMode: "class", // o 'media' si prefieres el modo oscuro basado en las preferencias del sistema
   plugins: [],
-};
+}

@@ -8,6 +8,7 @@
     "forgotPassword": "パスワードをお忘れですか?"
   },
   "nav": {
+    "search": "検索",
     "dashboard": "ダッシュボード",
     "tasks": "タスク",
     "automations": "自動化",

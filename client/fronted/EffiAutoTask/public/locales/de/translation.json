@@ -8,6 +8,7 @@
     "forgotPassword": "Passwort vergessen?"
   },
   "nav": {
+    "search": "Suche",
     "dashboard": "Dashboard",
     "tasks": "Aufgaben",
     "automations": "Automatisierungen",
