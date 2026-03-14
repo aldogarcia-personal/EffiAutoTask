@@ -11,7 +11,7 @@ import PlanSection from "./components/PlanSection.tsx"
 import Notes from "./components/Notes.tsx"
 import Insights from "./components/Insights.tsx"
 import Notifications from "./components/notifications.tsx"
-import Automations from "./components/automations.tsx"
+import Automations from "./components/Automations.tsx"
 
 const App: React.FC = () => {
   return (
