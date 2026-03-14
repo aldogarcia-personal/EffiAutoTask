@@ -1,3 +1,4 @@
+// TODO: solucionar problema de deployment por nombre de este archivo
 const Automations: React.FC = () => {
   return (
     <div className="automations-container flex flex-col gap-4 p-6">
