@@ -57,6 +57,6 @@ export function Desplegar() {
   )
 }
 
-export function language() {
+export function Language() {
   return <FontAwesomeIcon icon={faGlobe} />
 }

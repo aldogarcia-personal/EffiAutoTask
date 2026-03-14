@@ -8,9 +8,12 @@
     "forgotPassword": "Forgot your password?"
   },
   "nav": {
-    "home": "Home",
-    "about": "About",
+    "dashboard": "Dashboard",
     "tasks": "Tasks",
+    "automations": "Automations",
+    "insights": "Insights",
+    "notes": "Notes",
+    "notifications": "Notifications",
     "settings": "Settings"
   },
   "landing": {

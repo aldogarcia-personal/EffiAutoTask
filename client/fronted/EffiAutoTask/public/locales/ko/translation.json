@@ -8,9 +8,12 @@
     "forgotPassword": "비밀번호를 잊으셨나요?"
   },
   "nav": {
-    "home": "홈",
-    "about": "정보",
+    "dashboard": "대시보드",
     "tasks": "작업",
+    "automations": "자동화",
+    "insights": "통찰력",
+    "notes": "메모",
+    "notifications": "알림",
     "settings": "설정"
   },
   "landing": {

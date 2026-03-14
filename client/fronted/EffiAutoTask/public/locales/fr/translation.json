@@ -8,9 +8,12 @@
     "forgotPassword": "Mot de passe oublié?"
   },
   "nav": {
-    "home": "Accueil",
-    "about": "À propos",
+    "dashboard": "Tableau de bord",
     "tasks": "Tâches",
+    "automations": "Automatisations",
+    "insights": "Aperçus",
+    "notes": "Notes",
+    "notifications": "Notifications",
     "settings": "Paramètres"
   },
   "landing": {

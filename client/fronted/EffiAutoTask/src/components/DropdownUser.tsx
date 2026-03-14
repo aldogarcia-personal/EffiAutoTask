@@ -31,7 +31,7 @@ function DropdownUser({ userName }: { userName: string }) {
   }
 
   return (
-    <div className="relative">
+    <div className="relative bottom-1">
       <button onClick={toggleDropdown} className="flex flex-col items-center">
         <img
           src="/assets/images/users/aldo.jpeg" // Asegúrate de que la ruta sea correcta

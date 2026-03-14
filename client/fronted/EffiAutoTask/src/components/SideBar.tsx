@@ -1,8 +1,9 @@
 import SelectLanguage from "./language"
 import DropdownUser from "./DropdownUser"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faListCheck } from "@fortawesome/free-solid-svg-icons"
-
+import { faListCheck, faBars } from "@fortawesome/free-solid-svg-icons"
+import { useState } from "react"
+import { useTranslation } from "react-i18next"
 // TODO: hacer cambios pertinentes para que el nav sea un sidebar
 // TODO: agregar seeciones de navegación nuevas: dashboard, automations, notes, Insights; Task mantenr
 // TODO: agregar iconos a cada sección de navegación
@@ -11,80 +12,96 @@ import { faListCheck } from "@fortawesome/free-solid-svg-icons"
 // TODO: Crear componentes de la sección de navegación: Dashboard, Automations, Notes, Insights y Task
 
 function sideBar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen)
+  }
+  const { t } = useTranslation()
   return (
-    <nav className="bg-nav-light dark:bg-nav-dark flex justify-between items-center p-4 shadow-md">
-      <div className="flex items-center space-x-4">
+    <div className="flex">
+      <div className="flex items-center space-x-4 p-4 ">
+        <button className={`p-1 ${isOpen ? "z-[60]" : "z-0"}`}>
+          <FontAwesomeIcon icon={faBars} onClick={toggleDropdown} />
+        </button>
         <a
           href="/Dashboard"
-          className="text-0056B3 text-xl font-bold dark:text-f5f5dc"
+          className={`text-0056B3 text-xl font-bold dark:text-f5f5dc ${isOpen ? "translate-x-60" : "translate-x-0"}`}
         >
           EffiAutoTask
         </a>
       </div>
-      <ul className="flex space-x-6">
-        <li>
-          <a
-            href="/Dashboard"
-            className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400 flex intems-center gap-2"
-          >
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Tasks"
-            className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400 flex items-center gap-2"
-          >
-            <FontAwesomeIcon icon={faListCheck} />
-            <span>Tasks</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Automations"
-            className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
-          >
-            Automations
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Insights"
-            className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
-          >
-            Insights
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Notes"
-            className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
-          >
-            Notes
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Notifications"
-            className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
-          >
-            Notifications
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Settings"
-            className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
-          >
-            Settings
-          </a>
-        </li>
-      </ul>
-      <div className="flex items-center space-x-4">
-        <SelectLanguage />
+      <div className="flex items-center space-x-4 ml-auto mb-2">
         <DropdownUser userName="aldo" />
+        <SelectLanguage />
       </div>
-    </nav>
+
+      {isOpen && (
+        <nav
+          className={`fixed left-0 top-0 h-screen w-64 bg-nav-light dark:bg-nav-dark flex flex-col p-4 shadow-md z-50 transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+        >
+          <ul className="flex  flex-col bottom-1">
+            <li>
+              <a
+                href="/Dashboard"
+                className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400 flex intems-center gap-2"
+              >
+                <span>{t("nav.dashboard")}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Tasks"
+                className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400 flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faListCheck} />
+                <span>{t("nav.tasks")}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Automations"
+                className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400 flex items-center "
+              >
+                <span>{t("nav.automations")}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Insights"
+                className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
+              >
+                <span>{t("nav.insights")}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Notes"
+                className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
+              >
+                <span>{t("nav.notes")}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Notifications"
+                className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
+              >
+                <span>{t("nav.notifications")}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Settings"
+                className="text-0056B3 no-underline hover:text-gray-300 p-4 dark:text-f5f5dc dark:hover:text-gray-400"
+              >
+                <span>{t("nav.settings")}</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </div>
   )
 }
 

@@ -8,9 +8,12 @@
     "forgotPassword": "パスワードをお忘れですか?"
   },
   "nav": {
-    "home": "ホーム",
-    "about": "について",
+    "dashboard": "ダッシュボード",
     "tasks": "タスク",
+    "automations": "自動化",
+    "insights": "インサイト",
+    "notes": "メモ",
+    "notifications": "通知",
     "settings": "設定"
   },
   "landing": {
