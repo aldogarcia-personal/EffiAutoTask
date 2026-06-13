@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@11.5.1",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "tailwind:watch": "npx tailwindcss -i ./src/index.css -o ./src/index.css --watch",
-    "start": "npm run tailwind:watch & npm run dev"
+    "tailwind:watch": "pnpm tailwindcss -i ./src/index.css -o ./src/index.css --watch",
+    "start": "pnpm run tailwind:watch & pnpm run dev"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^7.1.0",

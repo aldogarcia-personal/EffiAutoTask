@@ -1,0 +1,18 @@
+# FEATURES TO REVIEW
+
+[ ] Revisar archivo ideas para el programa de effiautot.txt
+[ ] Revisar archivo TODO LIST PROGRMACIÓN EAT.txt
+[ ] Revisar archivo ideas surgidas para landing page.md
+[ ] Investigar inconsistencia con commits en proyecto, GitHub y Vercel
+[ ] Investigar cómo funciona el redireccionamiento de paths cuando no estás autorizado y necesitas credenciales válidas
+[ ] Investigar el uso de cookieStore para sesión/autenticación
+[ ] Hacer investigación sobre los paths y la estructura de rutas
+[ ] Investigar el uso de GSAP para animaciones en la landing page
+[ ] Terminar la estructura de la app web en `App.tsx` y rutas principales
+[ ] Investigar la documentación del proyecto y cómo reflejarla en la app
+[ ] Crear una sección resumen de landing page que atraiga la atención y redirija a otra sección
+[ ] Evaluar si la sección resumen hace obsoleto el nav principal
+[ ] Diseñar una funcionalidad que bloquee ventanas no relacionadas con la actividad actual
+[ ] Diseñar una funcionalidad que abra solo ventanas importantes según la actividad
+[ ] Vincular el horario de la agenda para bloquear y abrir ventanas automáticamente
+

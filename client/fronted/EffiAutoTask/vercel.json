@@ -1,3 +1,15 @@
 {
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist",
+  "packageManager": "pnpm@11.5.1",
+  "env": {
+    "NODE_ENV": "production",
+    "NODE_VERSION": "20.x"
+  },
+  "functions": {
+    "api/**": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

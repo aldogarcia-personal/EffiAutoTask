@@ -1,0 +1,3 @@
+packages:
+  - 'client/fronted/EffiAutoTask'
+  - 'server/backend/EffiAutoTAsk'

@@ -1,0 +1,20 @@
+{
+  "name": "effiautotask-monorepo",
+  "version": "1.0.0",
+  "description": "EffiAutoTask - Automated Task Management with pnpm workspaces",
+  "packageManager": "pnpm@11.5.1",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --recursive run dev",
+    "build": "pnpm --recursive run build",
+    "lint": "pnpm --recursive run lint",
+    "test": "pnpm --recursive run test",
+    "frontend": "pnpm -F effiautotask",
+    "backend": "pnpm -F your-project-name",
+    "frontend:dev": "pnpm -F effiautotask run dev",
+    "backend:dev": "pnpm -F your-project-name run dev"
+  },
+  "private": true
+}

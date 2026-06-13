@@ -1,0 +1,4 @@
+ideas para el programa de effiautotask
+crear una funcionalidad que bloquee las ventanas que no tengan que ver con las actividades que se están efectuando
+crear una funcionalidad que me ayude a abrir solo las ventanas que son importantes para poder trabajar en la actividad y que complemente la anterior
+vincular el horario establecido en la agenda para poder bloquear las ventanas y abrir las ventanas de forma automatica

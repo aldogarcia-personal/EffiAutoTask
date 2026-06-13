@@ -1,0 +1,8 @@
+TODO LIST PROGRMACIÓN EAT
+investigar inconsistencia con commits en proyecto, GitHub y vercel
+investigar sobre como funciona el redirigiemto de paths cuando no estas autorizado y necesitas credenciales validas para acceder a dicha path
+cookieStore
+hacer una investigación acerca de los paths
+hacer investigación sobre gsap 
+terminar estructura de app web
+investigar acerca de documentación de proyecto
