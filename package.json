@@ -4,7 +4,7 @@
   "description": "EffiAutoTask - Automated Task Management with pnpm workspaces",
   "packageManager": "pnpm@11.6.0",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "pnpm --recursive run dev",
