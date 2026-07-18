@@ -1,49 +1,55 @@
-import { useState, useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
+// importando deendencias de gsap
+import { gsap } from "gsap"
 
-function DarkModeToggle() {
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem("darkMode")
-    return savedMode ? JSON.parse(savedMode) : false
-  })
+interface DarkModeToggleProps {
+  darkMode: boolean
+  onToggle: () => void
+}
+
+function DarkModeToggle({ darkMode, onToggle }: DarkModeToggleProps) {
+  const circleRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const root = document.documentElement
-    const body = document.body
-
     if (darkMode) {
-      root.classList.add("dark")
-      body.classList.add("bg-gray-light", "dark:bg-gray-dark")
+      gsap.to(circleRef.current, {
+        x: 28,
+        duration: 0.3,
+        ease: "power2.inOut",
+      })
     } else {
-      root.classList.remove("dark")
-      body.classList.remove("bg-gray-light", "dark:bg-gray-dark")
+      gsap.to(circleRef.current, {
+        x: 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+      })
     }
-
-    localStorage.setItem("darkMode", JSON.stringify(darkMode))
   }, [darkMode])
 
-  const toggleDarkMode = () => setDarkMode((prevMode: any) => !prevMode)
-
   return (
-    <div className="flex items-center">
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input
-          type="checkbox"
-          checked={darkMode}
-          onChange={toggleDarkMode}
-          className="sr-only peer"
-        />
-        <div className="w-14 h-8 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:bg-blue-600 transition-colors duration-300">
-          <div className="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300 ease-in-out transform peer-checked:translate-x-7 flex items-center justify-center">
-            <FontAwesomeIcon
-              icon={darkMode ? faMoon : faSun}
-              className="text-yellow-500 dark:text-yellow-300 transition-colors duration-300"
-            />
-          </div>
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-pressed={darkMode}
+      className="flex items-center rounded-full focus:outline-none focus:ring-2 focus:ring-primary/60"
+    >
+      <div
+        className={`relative w-14 h-8 rounded-full transition-colors duration-300 border border-black ${darkMode ? "bg-primary-hover shadow-[0_8px_20px_-10px_rgba(15,23,42,0.45)]" : "bg-white shadow-[0_8px_20px_-10px_rgba(15,23,42,0.1)]"}`}
+      >
+        <div
+          ref={circleRef}
+          className={`absolute top-1 left-1 w-6 h-6 rounded-full shadow-md flex items-center justify-center ${darkMode ? "bg-primary" : "bg-white"}`}
+          style={{ x: 0 }}
+        >
+          <FontAwesomeIcon
+            icon={darkMode ? faMoon : faSun}
+            className={`${darkMode ? "text-white" : "text-yellow-500"}`}
+          />
         </div>
-      </label>
-    </div>
+      </div>
+    </button>
   )
 }
 

@@ -1,8 +1,11 @@
 // TODO: solucionar el problema de selección de idioma japones (se selecciona español al presionar la opcion de japones en el selector)
 import { useTranslation } from "react-i18next"
 import { Language } from "./icons"
+type selectLanguageProps = {
+  darkMode: boolean
+}
 
-function SelectLanguage() {
+function SelectLanguage({ darkMode }: selectLanguageProps) {
   const { i18n } = useTranslation()
 
   const changeLanguage = (lng: string) => {
@@ -11,12 +14,14 @@ function SelectLanguage() {
   }
 
   return (
-    <div className="relative flex items-center bg-nav-light dark:bg-nav-dark text-0056B3 dark:text-f5f5dc ">
+    <div
+      className={`relative flex items-center ${darkMode ? "bg-nav-dark text-f5f5dc" : "bg-nav-light text-0056B3"}   `}
+    >
       <Language />
       <select
         value={i18n.language}
         onChange={(e) => changeLanguage(e.target.value)}
-        className="pr-8 bg-nav-light dark:bg-nav-dark text-0056B3 dark:text-f5f5dc focus:outline-none focus:ring-2 focus:ring-00449B"
+        className={`pr-8 ${darkMode ? "bg-nav-dark text-f5f5dc" : "bg-nav-light text-0056B3"}    focus:outline-none focus:ring-2 focus:ring-00449B`}
       >
         <option value="es">Español</option>
         <option value="en">English</option>

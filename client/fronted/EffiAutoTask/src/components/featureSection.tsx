@@ -1,13 +1,18 @@
 import PlanCard from "./planCard"
 import { useNavigate } from "react-router-dom"
+type FeatureSectionProps = {
+  darkMode: boolean
+}
 
-const FeatureSection = () => {
+const FeatureSection = ({ darkMode }: FeatureSectionProps) => {
   const navigate = useNavigate()
   const handleShowRegister = () => {
     navigate("/account/register")
   }
   return (
-    <div>
+    <div
+      className={`py-16 ${darkMode ? "bg-surface-dark text-text-dark" : "bg-surface text-dark"}`}
+    >
       <main>
         {/* PlanCard individual */}
         <PlanCard />
@@ -16,7 +21,9 @@ const FeatureSection = () => {
         <section>
           <h2>Planes y Features</h2>
 
-          <div className="plans-comparison">
+          <div
+            className={`${darkMode ? "bg-surface-dark" : "border-slate-200 bg-surface"}`}
+          >
             <article>
               <h3>Free</h3>
               <button

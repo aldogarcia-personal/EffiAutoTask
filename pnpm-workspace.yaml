@@ -1,3 +1,6 @@
 packages:
   - 'client/fronted/EffiAutoTask'
   - 'server/backend/EffiAutoTAsk'
+allowBuilds:
+  '@swc/core': false
+  esbuild: false
