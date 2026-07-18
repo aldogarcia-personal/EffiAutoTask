@@ -3,7 +3,7 @@ nixPkgs = ["nodejs_22"]
 cmds = ["corepack enable && corepack prepare pnpm@11.6.0 --activate"]
 
 [phases.install]
-cmds = ["pnpm config set node-linker hoisted && pnpm install --frozen-lockfile"]
+cmds = ["pnpm install --frozen-lockfile"]
 
 [variables]
 NIXPACKS_NODE_VERSION = "22"

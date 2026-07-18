@@ -1,6 +1,8 @@
 packages:
-  - 'client/fronted/EffiAutoTask'
-  - 'server/backend/EffiAutoTAsk'
+  - "client/fronted/EffiAutoTask"
+  - "server/backend/EffiAutoTAsk"
 allowBuilds:
-  '@swc/core': false
+  "@swc/core": false
   esbuild: false
+settings:
+  node-linker: hoisted
