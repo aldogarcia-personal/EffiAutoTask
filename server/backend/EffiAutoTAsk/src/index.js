@@ -1,9 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { MONGODB_URI, PORT } from "./config";
+import config from "./config.js";
 
 const app = express();
+const { MONGODB_URI, PORT } = config;
 
 // Middleware para permitir el uso de JSON
 app.use(express.json());

@@ -1,0 +1,15 @@
+{
+  "name": "effiautotask-backend-root",
+  "private": true,
+  "packageManager": "pnpm@11.6.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --dir ./EffiAutoTAsk run dev",
+    "start": "pnpm --dir ./EffiAutoTAsk run start"
+  },
+  "workspaces": [
+    "EffiAutoTAsk"
+  ]
+}
