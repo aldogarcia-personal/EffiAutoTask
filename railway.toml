@@ -3,4 +3,4 @@ builder = "RAILPACK"
 buildCommand = "corepack prepare pnpm@10.15.0 --activate && pnpm install --frozen-lockfile"
 
 [deploy]
-startCommand = "pnpm --dir ./server start"
+startCommand = "node ./server/backend/EffiAutoTAsk/src/index.js"
