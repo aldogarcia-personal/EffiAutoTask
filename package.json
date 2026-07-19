@@ -11,7 +11,7 @@
     "build": "pnpm --recursive run build",
     "lint": "pnpm --recursive run lint",
     "test": "pnpm --recursive run test",
-    "start": "node ./server/backend/EffiAutoTAsk/src/index.js",
+    "start": "pnpm --dir .//EffiAutoTAsk start",
     "frontend": "pnpm -C client/fronted/EffiAutoTask",
     "backend": "pnpm --dir ./server/backend/EffiAutoTAsk",
     "frontend:dev": "pnpm -C client/fronted/EffiAutoTask run dev",
