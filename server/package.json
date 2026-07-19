@@ -1,0 +1,8 @@
+{
+  "name": "effiautotask-server-root",
+  "private": true,
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "start": "pnpm --dir ./backend/EffiAutoTAsk start"
+  }
+}
