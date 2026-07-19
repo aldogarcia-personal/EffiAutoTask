@@ -11,11 +11,11 @@
     "build": "pnpm --recursive run build",
     "lint": "pnpm --recursive run lint",
     "test": "pnpm --recursive run test",
-    "start": "pnpm --dir server/backend start",
+    "start": "pnpm --dir ./server/backend/EffiAutoTAsk start",
     "frontend": "pnpm -C client/fronted/EffiAutoTask",
-    "backend": "pnpm --dir server/backend",
+    "backend": "pnpm --dir ./server/backend/EffiAutoTAsk",
     "frontend:dev": "pnpm -C client/fronted/EffiAutoTask run dev",
-    "backend:dev": "pnpm --dir server/backend run dev"
+    "backend:dev": "pnpm --dir ./server/backend/EffiAutoTAsk run dev"
   },
   "private": true
 }
