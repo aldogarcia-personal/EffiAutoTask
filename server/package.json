@@ -3,6 +3,6 @@
   "private": true,
   "packageManager": "pnpm@10.15.0",
   "scripts": {
-    "start": "pnpm --dir ./backend/EffiAutoTAsk start"
+    "start": "node ./backend/EffiAutoTAsk/src/index.js"
   }
 }
