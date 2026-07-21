@@ -1,11 +1,23 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import DarkModeToggle from "./DarkModeToggle"
+import useDarkMode from "../hooks/useDarkMode"
 
-function DropdownUser({ userName }: { userName: string }) {
+type DropdownUserProps = {
+  userName: string
+  darkMode?: boolean
+  toggleDarkMode?: () => void
+}
+
+function DropdownUser({ userName, darkMode: darkModeProp, toggleDarkMode: toggleDarkModeProp }: DropdownUserProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [logOut, setLogOut] = useState(false)
   const navigate = useNavigate()
+
+  const dm =
+    darkModeProp !== undefined && toggleDarkModeProp
+      ? { darkMode: darkModeProp, toggleDarkMode: toggleDarkModeProp }
+      : useDarkMode()
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
@@ -48,7 +60,9 @@ function DropdownUser({ userName }: { userName: string }) {
           >
             Configuraciones
           </button>
-          <DarkModeToggle />
+          <div className="px-4 py-2">
+            <DarkModeToggle darkMode={dm.darkMode} onToggle={dm.toggleDarkMode} />
+          </div>
           <button
             onClick={handleLogOutClick}
             className="block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"

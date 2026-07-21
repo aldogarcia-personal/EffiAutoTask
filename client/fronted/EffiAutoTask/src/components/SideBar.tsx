@@ -1,5 +1,6 @@
 import SelectLanguage from "./language"
 import DropdownUser from "./DropdownUser"
+import useDarkMode from "../hooks/useDarkMode"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faListCheck,
@@ -26,6 +27,8 @@ function sideBar() {
     setOpenSearch(!openSearch)
   }
   const { t } = useTranslation()
+  const { darkMode, toggleDarkMode } = useDarkMode()
+
   return (
     <div className="flex">
       <div className="flex items-center space-x-4 p-4 justify-center ">
@@ -40,8 +43,8 @@ function sideBar() {
         </a>
       </div>
       <div className="flex items-center space-x-4 ml-auto mb-2">
-        <DropdownUser userName="aldo" />
-        <SelectLanguage />
+        <DropdownUser userName="aldo" darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <SelectLanguage darkMode={darkMode} />
       </div>
 
       {isOpen && (
